@@ -77,7 +77,12 @@ html{
     margin: 1.5em auto 0 auto;
 }
 .msg-container{
-    height: 30vmin;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 #msg{
     font-size: 8vmin;
@@ -85,5 +90,8 @@ html{
 }
     
 .hide{
+    display: none;
+}
+#hide{
     display: none;
 }

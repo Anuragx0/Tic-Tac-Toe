@@ -3,6 +3,8 @@ let rstBtn = document.querySelector("#restart");
 let newGameBtn = document.querySelector("#new-btn");
 let msg = document.querySelector("#msg");
 let msgContainer = document.querySelector(".msg-container");
+let mainContainer = document.querySelector("#main");
+console.log(mainContainer);
 
 let turn0 = true;
 
@@ -22,6 +24,7 @@ const resetGame = () => {
     turn0 = true; 
     enableBox();
     msgContainer.classList.add("hide");
+    mainContainer.classList.remove("hide");
 }
 
 box.forEach((box) => {
@@ -52,6 +55,7 @@ const enableBox = () => {
 const showWinner = (Winner) => {
     msg.innerText =`Congratulation, winner is ${Winner}`;
     msgContainer.classList.remove("hide");
+    mainContainer.classList.add("hide");
     disableBox();
 }
 
