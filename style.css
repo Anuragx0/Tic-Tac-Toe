@@ -18,9 +18,15 @@ html{
     font-size: 16px;
     text-align: center;
 }
+#main-container{
+    height: 100%;
+    display: flex;
+
+}
 #main{
     height: 100%;
     width: 100%;
+    margin-top: 2.5vmin;
 }
 #game-name{
     text-align: center;
@@ -78,7 +84,7 @@ html{
 }
 .msg-container{
     height: 100%;
-    width: 100%;
+    width:50%;
     display: flex;
     justify-content: center;
     align-items: center;

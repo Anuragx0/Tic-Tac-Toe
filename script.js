@@ -23,7 +23,6 @@ const resetGame = () => {
     turn0 = true; 
     enableBox();
     msgContainer.classList.add("hide");
-    mainContainer.classList.remove("hide");
 }
 
 box.forEach((box) => {
@@ -55,13 +54,11 @@ const showWinner = (Winner) => {
     msg.innerText =`Congratulation! 
                      ${Winner} Win's`;
     msgContainer.classList.remove("hide");
-    mainContainer.classList.add("hide");
     disableBox();
 }
 const tieGame = () => {
     msg.innerText = "It's a Tie Game!";
     msgContainer.classList.remove("hide");
-    mainContainer.classList.add("hide");
     disableBox();
 }
 const tie = () => {
@@ -69,7 +66,6 @@ const tie = () => {
     for(let boxes of box){
         if(boxes.innerText!= ""){
             count++;
-            console.log(boxes.innerText);
         }
     }
     if(count == 9){
