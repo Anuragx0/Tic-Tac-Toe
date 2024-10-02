@@ -4,7 +4,6 @@ let newGameBtn = document.querySelector("#new-btn");
 let msg = document.querySelector("#msg");
 let msgContainer = document.querySelector(".msg-container");
 let mainContainer = document.querySelector("#main");
-console.log(mainContainer);
 
 let turn0 = true;
 
@@ -53,12 +52,30 @@ const enableBox = () => {
     }
 }
 const showWinner = (Winner) => {
-    msg.innerText =`Congratulation, winner is ${Winner}`;
+    msg.innerText =`Congratulation! 
+                     ${Winner} Win's`;
     msgContainer.classList.remove("hide");
     mainContainer.classList.add("hide");
     disableBox();
 }
-
+const tieGame = () => {
+    msg.innerText = "It's a Tie Game!";
+    msgContainer.classList.remove("hide");
+    mainContainer.classList.add("hide");
+    disableBox();
+}
+const tie = () => {
+    let count = 0;
+    for(let boxes of box){
+        if(boxes.innerText!= ""){
+            count++;
+            console.log(boxes.innerText);
+        }
+    }
+    if(count == 9){
+        tieGame();
+    }
+}
 const checkWinner = () => {
     for(let pattern of winPattern){
         let posVal1 = box[pattern[0]].innerText;
@@ -69,6 +86,8 @@ const checkWinner = () => {
             if(posVal1 === posVal2 && posVal2 === posVal3){
                 console.log("we have a Winner");
                 showWinner(posVal1);
+            }else{
+                tie();
             }
         }
     }
